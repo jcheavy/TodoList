@@ -24,6 +24,8 @@ public class TelaPrincipal extends JFrame {
 	private JPanel panelButons;
 	private JPanel panelQuadro;
 	
+	private PanelTrio pnTrio;
+	
 	private Date dataAtual;
 	private JLabel lbldata;
 	private JButton btAdd;
@@ -74,11 +76,12 @@ public class TelaPrincipal extends JFrame {
 		panelButons.add(btBorder);
 		panelButons.add(btRouded);
 		
-		
+		pnTrio = new PanelTrio();
 		
 		this.add(panelEsquerdo, BorderLayout.WEST);
 		//this.add(panelCentro, BorderLayout.CENTER);
-		this.add(panelQuadro, BorderLayout.CENTER);
+		//this.add(panelQuadro, BorderLayout.CENTER);
+		this.add(pnTrio, BorderLayout.CENTER);
 
 		setVisible(true);
 	}
