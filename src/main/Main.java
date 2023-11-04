@@ -9,7 +9,7 @@ import views.TelaPrincipal;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Testa");
+		
 		EventQueue.invokeLater(new Runnable() {
 
 			@Override
