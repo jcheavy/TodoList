@@ -4,16 +4,14 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-import views.PanelQuadro;
-
 
 public class CaptureMouseEvent implements MouseListener, MouseMotionListener {
 
-	private PanelQuadro panelQuadro;
+	//private PanelQuadro panelQuadro;
 
-	public CaptureMouseEvent(PanelQuadro panelQuadro) {
-		this.panelQuadro = panelQuadro;
-	}
+//	public CaptureMouseEvent(PanelQuadro panelQuadro) {
+//		this.panelQuadro = panelQuadro;
+//	}
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
@@ -23,7 +21,7 @@ public class CaptureMouseEvent implements MouseListener, MouseMotionListener {
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		panelQuadro.setRectPosition(e.getX(), e.getY());
+		//panelQuadro.setRectPosition(e.getX(), e.getY());
 	}
 
 	@Override

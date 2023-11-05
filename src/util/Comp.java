@@ -3,6 +3,7 @@ package util;
 import java.awt.Color;
 import java.awt.Dimension;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -50,7 +51,7 @@ public class Comp {
 	
 	public static JButton btQuad(String desc) {
 		JButton but = new JButton(desc);
-		but.setPreferredSize(new Dimension(70, 60));
+		but.setPreferredSize(new Dimension(119, 30));
 		but.setFont(StrFont.taoma_14);
 		but.setBackground(StrFont.verde);
 		but.setForeground(Color.WHITE);
@@ -80,5 +81,5 @@ public class Comp {
 			JOptionPane.showMessageDialog(null, "O campo não pode ser vazio");
 		}
 	}
-
+	
 }

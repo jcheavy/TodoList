@@ -7,6 +7,7 @@ import java.awt.FlowLayout;
 import java.text.DateFormat;
 import java.util.Date;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -24,25 +25,27 @@ public class TelaPrincipal extends JFrame {
 	private JPanel panelCentro;
 	private JPanel panelEsquerdo;
 	private JPanel panelButons;
-	private JPanel panelQuadro;
+	
 	
 	private Date dataAtual;
 	private JLabel lbldata;
-	private JButton btAdd;
 	
-
-
+	private JButton btAdd;
+	private JButton btAddTarefa;
 	private JButton btBorder;
 	private JButton btRouded;
 
 
 	public TelaPrincipal() {
 
-
+		 ImageIcon addIcon = new ImageIcon(getClass().getResource("/imagens/add.png"));
+		 ImageIcon logo = new ImageIcon(getClass().getResource("/imagens/LogoHeavyUsers.png"));
+        
 		setLayout(new BorderLayout());
 		setSize(1024, 728);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
+		setIconImage(logo.getImage());
 		
 		contentPane = new JPanel();
 		contentPane.setLayout(new FlowLayout());
@@ -63,7 +66,9 @@ public class TelaPrincipal extends JFrame {
 		panelCentro = new JPanel();		
 
 
-		btAdd = Comp.btQuad("+");
+		btAdd = Comp.btQuad("Quadro");
+		btAdd.setIcon(addIcon);
+        btAddTarefa = Comp.btQuad("T");
 		btBorder = Comp.btBorda("=");
 		btRouded = new RoundedButon(5, StrFont.bege);
 
@@ -71,13 +76,14 @@ public class TelaPrincipal extends JFrame {
 		panelEsquerdo.setPreferredSize(new Dimension(120, 727));
 		panelEsquerdo.setBackground(StrFont.azul_esc);
 
-		panelQuadro = new PanelQuadro();		
+			
 		
 
 		panelEsquerdo.add(lbldata, BorderLayout.BEFORE_FIRST_LINE);
 		panelEsquerdo.add(panelButons, BorderLayout.CENTER);
 
 		panelButons.add(btAdd);
+		panelButons.add(btAddTarefa);
 		panelButons.add(btBorder);
 		panelButons.add(btRouded);
 
@@ -85,6 +91,14 @@ public class TelaPrincipal extends JFrame {
 		
 
 		// Listeners
+		
+		btAdd.addActionListener(ev -> {
+			  addPanel();
+			});
+		
+		btAddTarefa.addActionListener(ev -> {
+			  addPanel();
+			});
 
 //		btAdd.addActionListener(new ActionListener() {			
 //			@Override
@@ -93,9 +107,7 @@ public class TelaPrincipal extends JFrame {
 //			}
 //		});
 
-		btAdd.addActionListener(ev -> {
-		  addPanel();
-		});
+		
 
 		this.add(panelEsquerdo, BorderLayout.WEST);
 		// this.add(panelCentro, BorderLayout.CENTER);
