@@ -3,8 +3,8 @@ package util;
 import java.awt.Color;
 import java.awt.Dimension;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -56,8 +56,8 @@ public class Comp {
 		but.setBackground(StrFont.verde);
 		but.setForeground(Color.WHITE);
 		but.setBorder(javax.swing.BorderFactory.createLineBorder(StrFont.verde, 1));
-//		but.setRequestFocusEnabled(false);
-//		but.setRolloverEnabled(false);
+		but.setRequestFocusEnabled(false);
+		but.setRolloverEnabled(false);
 	    //but.setMargin(new Insets(2, 1000, 2, 14));
 		return but;
 	}
@@ -80,6 +80,12 @@ public class Comp {
 		if(txf.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "O campo não pode ser vazio");
 		}
+	}
+	
+	public static JLabel lbTaoma14 (String texto) {
+		JLabel label = new JLabel(texto);
+		label.setFont(StrFont.taoma_14);
+		return label;
 	}
 	
 }

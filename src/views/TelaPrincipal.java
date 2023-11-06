@@ -30,7 +30,7 @@ public class TelaPrincipal extends JFrame {
 	private Date dataAtual;
 	private JLabel lbldata;
 	
-	private JButton btAdd;
+	private JButton btAddProjeto;
 	private JButton btAddTarefa;
 	private JButton btBorder;
 	private JButton btRouded;
@@ -66,8 +66,8 @@ public class TelaPrincipal extends JFrame {
 		panelCentro = new JPanel();		
 
 
-		btAdd = Comp.btQuad("Quadro");
-		btAdd.setIcon(addIcon);
+		btAddProjeto = Comp.btQuad("Projeto");
+		btAddProjeto.setIcon(addIcon);
         btAddTarefa = Comp.btQuad("T");
 		btBorder = Comp.btBorda("=");
 		btRouded = new RoundedButon(5, StrFont.bege);
@@ -82,7 +82,7 @@ public class TelaPrincipal extends JFrame {
 		panelEsquerdo.add(lbldata, BorderLayout.BEFORE_FIRST_LINE);
 		panelEsquerdo.add(panelButons, BorderLayout.CENTER);
 
-		panelButons.add(btAdd);
+		panelButons.add(btAddProjeto);
 		panelButons.add(btAddTarefa);
 		panelButons.add(btBorder);
 		panelButons.add(btRouded);
@@ -92,27 +92,16 @@ public class TelaPrincipal extends JFrame {
 
 		// Listeners
 		
-		btAdd.addActionListener(ev -> {
-			  addPanel();
+		btAddProjeto.addActionListener(ev -> {
+			addProjeto();
 			});
 		
 		btAddTarefa.addActionListener(ev -> {
 			  addPanel();
 			});
-
-//		btAdd.addActionListener(new ActionListener() {			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				
-//			}
-//		});
-
 		
 
-		this.add(panelEsquerdo, BorderLayout.WEST);
-		// this.add(panelCentro, BorderLayout.CENTER);
-		// this.add(panelQuadro, BorderLayout.CENTER);
-		//this.add(pnTrio, BorderLayout.CENTER);
+		this.add(panelEsquerdo, BorderLayout.WEST);	
 
 		setVisible(true);
 	}
@@ -125,5 +114,14 @@ public class TelaPrincipal extends JFrame {
 		contentPane.add(panel);
 		contentPane.revalidate();
 		contentPane.repaint();
+	}
+	
+	private void addProjeto() {
+		
+		new TelaDados();
+//		ProjetoPanel quadro = new ProjetoPanel();
+//		contentPane.add(quadro);
+//		contentPane.revalidate();
+//		contentPane.repaint();
 	}
 }
