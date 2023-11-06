@@ -33,8 +33,9 @@ public class TelaPrincipal extends JFrame {
 	private JButton btAddProjeto;
 	private JButton btAddTarefa;
 	private JButton btBorder;
-	private JButton btRouded;
-
+	private JButton btRouded;   
+    
+ 
 
 	public TelaPrincipal() {
 
@@ -93,7 +94,7 @@ public class TelaPrincipal extends JFrame {
 		// Listeners
 		
 		btAddProjeto.addActionListener(ev -> {
-			addProjeto();
+			 new TelaDados(this);			
 			});
 		
 		btAddTarefa.addActionListener(ev -> {
@@ -116,12 +117,15 @@ public class TelaPrincipal extends JFrame {
 		contentPane.repaint();
 	}
 	
-	private void addProjeto() {
+	public void addProjeto(String titulo) {		
 		
-		new TelaDados();
-//		ProjetoPanel quadro = new ProjetoPanel();
-//		contentPane.add(quadro);
-//		contentPane.revalidate();
-//		contentPane.repaint();
-	}
+		ProjetoPanel quadro = new ProjetoPanel();
+		quadro.setTitulo(titulo);
+		
+		contentPane.add(quadro);
+		contentPane.revalidate();
+		contentPane.repaint();
+		
+	}	
+	
 }

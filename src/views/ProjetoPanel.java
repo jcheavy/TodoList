@@ -28,7 +28,7 @@ public class ProjetoPanel extends JPanel {
 	
 	private JPanel listPanel;
 	private JPanel topPanel;
-	
+	private TelaDados telaDados;
 
 	public ProjetoPanel() {		
 		
@@ -40,7 +40,7 @@ public class ProjetoPanel extends JPanel {
 		this.setLayout(new BorderLayout());
 		
 		
-		titulo = new JLabel("Titulo");		
+		titulo = new JLabel();		
 		descricao = new JLabel("Um breve descição da tarefa");	
 		
 		topPanel = new JPanel(new GridLayout(3,1));
@@ -84,15 +84,17 @@ public class ProjetoPanel extends JPanel {
 	}
 
 	
-	private void addTarefaPanel() {
-		
-		TarefaPanel panel = new TarefaPanel();		
+	private void addTarefaPanel() {		
+		TarefaPanel panel = new TarefaPanel();	
 		listPanel.add(panel);
 		listPanel.revalidate();
 		listPanel.repaint();
 	}
 
 
+	public void setTitulo(String titulo) {
+		this.titulo.setText(titulo);
+	}
 	
 	
 }

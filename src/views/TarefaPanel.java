@@ -50,8 +50,7 @@ public class TarefaPanel extends JPanel {
 		this.add(btColorChoose, BorderLayout.WEST);
 		this.add(cBoxFont, BorderLayout.SOUTH);
 
-		this.setBackground(new Color(252, 250, 199));
-		System.out.println("Panel Task Funcionando");
+		this.setBackground(new Color(252, 250, 199));		
 
 		btColorChoose.addActionListener(ev -> {
 			 //ColorChoose();		
